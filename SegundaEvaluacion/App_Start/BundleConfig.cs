@@ -36,6 +36,7 @@ namespace SegundaEvaluacion
                       "~/Scripts/sweetalert2.all.min.js",
                       "~/Scripts/jquery.loadingModal.min.js",
                       "~/Scripts/ajax.js"));
+
         }
     }
 }
