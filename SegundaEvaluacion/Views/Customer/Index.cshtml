@@ -1,0 +1,73 @@
+﻿@using SegundaEvaluacion.Utilities
+@model IEnumerable<SegundaEvaluacion.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index customer</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Form", new { operaciones = Operaciones.insertar }, new { @class = "btn btn-primary" })
+</p>
+@if (Model.Count() > 0)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nameCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastNameCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passwordCustomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phoneNumber)
+            </th>
+            <th>operaciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idCustomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nameCustomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastNameCustomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emailCustomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.passwordCustomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phoneNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Form", new { id = item.idCustomer, operaciones = Operaciones.modificar }, new { @class = "btn btn-xs btn-warning" })
+                    @Html.ActionLink("Ver", "Form", new { id = item.idCustomer, operaciones = Operaciones.ver }, new { @class = "btn btn-xs btn-default" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idCustomer, operaciones = Operaciones.eliminar }, new { @class = "btn btn-xs btn-danger eliminar" })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <h4 class="text-center">No hay datos.</h4>
+}

@@ -1,0 +1,61 @@
+﻿@using SegundaEvaluacion.Utilities
+@model IEnumerable<SegundaEvaluacion.Models.Store>
+
+@{
+    ViewBag.Title = "Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index Store</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Form", new { operaciones = Operaciones.insertar }, new { @class = "btn btn-primary" })
+</p>
+@if (Model.Count() > 0)
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.addressStore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typeStore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>operaciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.addressStore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.typeStore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Form", new { id = item.id, operaciones = Operaciones.modificar }, new { @class = "btn btn-xs btn-warning" })
+                    @Html.ActionLink("Ver", "Form", new { id = item.id, operaciones = Operaciones.ver }, new { @class = "btn btn-xs btn-default" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id, operaciones = Operaciones.eliminar }, new { @class = "btn btn-xs btn-danger eliminar" })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <h4 class="text-center">No hay datos.</h4>
+}
