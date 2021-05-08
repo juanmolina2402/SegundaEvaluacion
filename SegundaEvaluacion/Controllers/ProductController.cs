@@ -49,14 +49,14 @@ namespace SegundaEvaluacion.Controllers
                 {
                     int id = 0;
                     //Si el ID es 0; entonces e esta insertando
-                    if (product.idProduct == 0)
+                    if (product.id == 0)
                     {
                         id = servicio.insertar(product);
                     }
                     else
                     {
                         //Si el ID es distinto de cero entonces estamos modificando
-                        id = servicio.modificar(product.idProduct, product);
+                        id = servicio.modificar(product.id, product);
                     }
                     if (id > 0)
                     {

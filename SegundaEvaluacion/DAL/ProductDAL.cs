@@ -19,15 +19,15 @@ namespace SegundaEvaluacion.DAL
                 //Si el listado tiene elementos, entonces se genera el ID
                 if (lstProduct.Count > 0)
                 {
-                    product.idProduct = lstProduct.Last().idProduct + 1;
+                    product.id = lstProduct.Last().id + 1;
                 }
                 else
                 {
                     //Si el listado esta vacio entonces el id será por default 1
-                    product.idProduct = 1;
+                    product.id = 1;
                 }
                 lstProduct.Add(product);
-                return product.idProduct;
+                return product.id;
 
             }
             catch (Exception ex)
@@ -41,8 +41,8 @@ namespace SegundaEvaluacion.DAL
             try
             {
                 //Buscando el indice en la ista
-                lstProduct[lstProduct.FindIndex(temp => temp.idProduct == id)] = product;
-                return product.idProduct;
+                lstProduct[lstProduct.FindIndex(temp => temp.id == id)] = product;
+                return product.id;
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace SegundaEvaluacion.DAL
             try
             {
                 //Buscando el indice en la ista
-                lstProduct.RemoveAt(lstProduct.FindIndex(aux => aux.idProduct == id));
+                lstProduct.RemoveAt(lstProduct.FindIndex(aux => aux.id == id));
                 return true;
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace SegundaEvaluacion.DAL
         {
             try
             {
-                var elementos = lstProduct.Find(temp => temp.idProduct == id);
+                var elementos = lstProduct.Find(temp => temp.id == id);
                 return elementos;
             }
             catch (Exception ex)

@@ -16,7 +16,7 @@ namespace SegundaEvaluacion.Models
 
         [Required]
         [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]
-        public bool typeStore { get; set; }
+        public string typeStore { get; set; }
 
         [Required]
         [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]

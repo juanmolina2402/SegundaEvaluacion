@@ -8,7 +8,7 @@ namespace SegundaEvaluacion.Models
 {
     public class Customer
     {
-        public int idCustomer { get; set; }
+        public int id { get; set; }
 
         [Required]
         [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]

@@ -8,7 +8,7 @@ namespace SegundaEvaluacion.Models
 {
     public class Product
     {
-        public int idProduct { get; set; }
+        public int id { get; set; }
 
         [Required]
         public int idStore { get; set; }

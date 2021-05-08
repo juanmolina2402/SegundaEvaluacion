@@ -19,15 +19,15 @@ namespace SegundaEvaluacion.DAL
                 //Si el listado tiene elementos, entonces se genera el ID
                 if (lstCustomer.Count > 0)
                 {
-                    customer.idCustomer = lstCustomer.Last().idCustomer + 1;
+                    customer.id = lstCustomer.Last().id + 1;
                 }
                 else
                 {
                     //Si el listado esta vacio entonces el id será por default 1
-                    customer.idCustomer = 1;
+                    customer.id = 1;
                 }
                 lstCustomer.Add(customer);
-                return customer.idCustomer;
+                return customer.id;
 
             }
             catch (Exception ex)
@@ -41,8 +41,8 @@ namespace SegundaEvaluacion.DAL
             try
             {
                 //Buscando el indice en la ista
-                lstCustomer[lstCustomer.FindIndex(temp => temp.idCustomer == id)] = customer;
-                return customer.idCustomer;
+                lstCustomer[lstCustomer.FindIndex(temp => temp.id == id)] = customer;
+                return customer.id;
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace SegundaEvaluacion.DAL
             try
             {
                 //Buscando el indice en la ista
-                lstCustomer.RemoveAt(lstCustomer.FindIndex(aux => aux.idCustomer == id));
+                lstCustomer.RemoveAt(lstCustomer.FindIndex(aux => aux.id == id));
                 return true;
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace SegundaEvaluacion.DAL
         {
             try
             {
-                var elementos = lstCustomer.Find(temp => temp.idCustomer == id);
+                var elementos = lstCustomer.Find(temp => temp.id == id);
                 return elementos;
             }
             catch (Exception ex)

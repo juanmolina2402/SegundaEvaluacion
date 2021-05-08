@@ -16,9 +16,6 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.idCustomer)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.nameCustomer)
             </th>
             <th>
@@ -40,9 +37,6 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.idCustomer)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.nameCustomer)
                 </td>
                 <td>
@@ -58,9 +52,9 @@
                     @Html.DisplayFor(modelItem => item.phoneNumber)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Form", new { id = item.idCustomer, operaciones = Operaciones.modificar }, new { @class = "btn btn-xs btn-warning" })
-                    @Html.ActionLink("Ver", "Form", new { id = item.idCustomer, operaciones = Operaciones.ver }, new { @class = "btn btn-xs btn-default" })
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idCustomer, operaciones = Operaciones.eliminar }, new { @class = "btn btn-xs btn-danger eliminar" })
+                    @Html.ActionLink("Editar", "Form", new { id = item.id, operaciones = Operaciones.modificar }, new { @class = "btn btn-xs btn-warning" })
+                    @Html.ActionLink("Ver", "Form", new { id = item.id, operaciones = Operaciones.ver }, new { @class = "btn btn-xs btn-default" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id, operaciones = Operaciones.eliminar }, new { @class = "btn btn-xs btn-danger eliminar" })
                 </td>
             </tr>
         }

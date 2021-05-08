@@ -15,9 +15,9 @@
 {
     <table class="table table-bordered table-striped">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.id)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.addressStore)
             </th>
@@ -33,9 +33,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.id)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.addressStore)
                 </td>

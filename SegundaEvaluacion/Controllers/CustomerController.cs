@@ -47,14 +47,14 @@ namespace SegundaEvaluacion.Controllers
                     //Esta variable nos sirve para saber si una carrera ha sido insertado correctamente.
                     int id = 0;
                     //Si el ID es 0; entonces e esta insertando
-                    if (customer.idCustomer == 0)
+                    if (customer.id == 0)
                     {
                         id = servicio.insertar(customer);
                     }
                     else
                     {
                         //Si el ID es distinto de cero entonces estamos modificando
-                        id = servicio.modificar(customer.idCustomer, customer);
+                        id = servicio.modificar(customer.id, customer);
                     }
 
                     // Si el id es mayoir a cero, entonces la operación es correcta.
