@@ -15,8 +15,7 @@ namespace SegundaEvaluacion.Models
         public string addressStore { get; set; }
 
         [Required]
-        [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]
-        public string typeStore { get; set; }
+        public bool typeStore { get; set; }
 
         [Required]
         [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]

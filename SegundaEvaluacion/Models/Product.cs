@@ -14,7 +14,6 @@ namespace SegundaEvaluacion.Models
         public int idStore { get; set; }
 
         [Required]
-        [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]
         public float price { get; set; }
 
         [Required]
@@ -26,7 +25,6 @@ namespace SegundaEvaluacion.Models
         public string description { get; set; }
 
         [Required]
-        [MaxLength(length: 50, ErrorMessage = "La longitud del campo no puede ser mayor a 50 caracteres.")]
         public int stock { get; set; }
     }
 }
